@@ -1,0 +1,604 @@
+# Day 1: NumPy and Arrays in Python for Competitive Programming
+
+## Introduction
+
+Arrays are one of the most fundamental data structures in programming and are heavily used in Competitive Programming (CP). Most problems involving searching, sorting, prefix sums, sliding windows, two pointers, binary search, and dynamic programming rely on arrays.
+
+In Python, the closest equivalent to an array is the **list**. However, Python also provides the **NumPy** library, which offers efficient multidimensional arrays and mathematical operations. While NumPy is rarely allowed in competitive programming platforms such as Codeforces, LeetCode, AtCoder, and CodeChef, understanding it helps build a strong foundation for data manipulation and numerical computing.
+
+---
+
+# 1. What is an Array?
+
+An array is a collection of elements stored in contiguous memory locations.
+
+Example:
+
+```python
+arr = [10, 20, 30, 40, 50]
+```
+
+Visualization:
+
+```text
+Index:  0   1   2   3   4
+Value: 10  20  30  40  50
+```
+
+Properties:
+
+* Stores multiple values under one variable.
+* Access elements using indices.
+* Indexing starts from 0.
+* Efficient random access.
+
+Time Complexity:
+
+| Operation     | Complexity |
+| ------------- | ---------- |
+| Access        | O(1)       |
+| Update        | O(1)       |
+| Search        | O(n)       |
+| Insert End    | O(1)       |
+| Insert Middle | O(n)       |
+| Delete        | O(n)       |
+
+---
+
+# 2. Arrays in Competitive Programming
+
+Most CP problems use Python lists as arrays.
+
+Input:
+
+```python
+n = int(input())
+arr = list(map(int, input().split()))
+```
+
+Example:
+
+Input:
+
+```text
+5
+1 2 3 4 5
+```
+
+Output Array:
+
+```python
+[1, 2, 3, 4, 5]
+```
+
+---
+
+# 3. Basic Array Operations
+
+## Accessing Elements
+
+```python
+arr = [10, 20, 30, 40]
+
+print(arr[0])
+print(arr[2])
+```
+
+Output:
+
+```text
+10
+30
+```
+
+---
+
+## Updating Elements
+
+```python
+arr[1] = 100
+
+print(arr)
+```
+
+Output:
+
+```text
+[10, 100, 30, 40]
+```
+
+---
+
+## Array Length
+
+```python
+len(arr)
+```
+
+Example:
+
+```python
+print(len(arr))
+```
+
+Output:
+
+```text
+4
+```
+
+---
+
+# 4. Traversing Arrays
+
+## Using Loop
+
+```python
+arr = [1,2,3,4,5]
+
+for x in arr:
+    print(x)
+```
+
+Output:
+
+```text
+1
+2
+3
+4
+5
+```
+
+---
+
+## Using Index
+
+```python
+for i in range(len(arr)):
+    print(arr[i])
+```
+
+---
+
+# 5. Common Competitive Programming Operations
+
+## Sum of Array
+
+```python
+arr = [1,2,3,4,5]
+
+print(sum(arr))
+```
+
+Output:
+
+```text
+15
+```
+
+Complexity:
+
+```text
+O(n)
+```
+
+---
+
+## Maximum Element
+
+```python
+print(max(arr))
+```
+
+Output:
+
+```text
+5
+```
+
+---
+
+## Minimum Element
+
+```python
+print(min(arr))
+```
+
+Output:
+
+```text
+1
+```
+
+---
+
+# 6. Sorting Arrays
+
+## Ascending Order
+
+```python
+arr = [5,2,4,1,3]
+
+arr.sort()
+
+print(arr)
+```
+
+Output:
+
+```text
+[1,2,3,4,5]
+```
+
+Complexity:
+
+```text
+O(n log n)
+```
+
+---
+
+## Descending Order
+
+```python
+arr.sort(reverse=True)
+
+print(arr)
+```
+
+Output:
+
+```text
+[5,4,3,2,1]
+```
+
+---
+
+# 7. Reverse an Array
+
+Method 1:
+
+```python
+arr.reverse()
+```
+
+Method 2:
+
+```python
+arr = arr[::-1]
+```
+
+Output:
+
+```text
+[5,4,3,2,1]
+```
+
+---
+
+# 8. Array Slicing
+
+Syntax:
+
+```python
+arr[start:end]
+```
+
+Example:
+
+```python
+arr = [10,20,30,40,50]
+
+print(arr[1:4])
+```
+
+Output:
+
+```text
+[20,30,40]
+```
+
+---
+
+# 9. Prefix Sum Concept
+
+One of the most important concepts in CP.
+
+Array:
+
+```python
+[1,2,3,4,5]
+```
+
+Prefix Sum:
+
+```text
+[1,3,6,10,15]
+```
+
+Implementation:
+
+```python
+arr = [1,2,3,4,5]
+
+prefix = [0]*len(arr)
+
+prefix[0] = arr[0]
+
+for i in range(1,len(arr)):
+    prefix[i] = prefix[i-1] + arr[i]
+
+print(prefix)
+```
+
+Output:
+
+```text
+[1,3,6,10,15]
+```
+
+Complexity:
+
+```text
+O(n)
+```
+
+---
+
+# 10. Frequency Counting
+
+Very common in CP.
+
+```python
+arr = [1,2,2,3,3,3]
+
+freq = {}
+
+for x in arr:
+    freq[x] = freq.get(x,0)+1
+
+print(freq)
+```
+
+Output:
+
+```text
+{1:1, 2:2, 3:3}
+```
+
+---
+
+# 11. Introduction to NumPy
+
+NumPy stands for Numerical Python.
+
+Installation:
+
+```bash
+pip install numpy
+```
+
+Import:
+
+```python
+import numpy as np
+```
+
+---
+
+# 12. Creating NumPy Arrays
+
+```python
+import numpy as np
+
+arr = np.array([1,2,3,4,5])
+
+print(arr)
+```
+
+Output:
+
+```text
+[1 2 3 4 5]
+```
+
+---
+
+# 13. Why NumPy is Fast
+
+Python List:
+
+* Stores references.
+* Different data types allowed.
+
+NumPy Array:
+
+* Stores same datatype.
+* Continuous memory allocation.
+* Vectorized operations.
+
+Result:
+
+```text
+Faster computation
+Lower memory usage
+Better mathematical operations
+```
+
+---
+
+# 14. NumPy Array Operations
+
+## Addition
+
+```python
+import numpy as np
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+print(a+b)
+```
+
+Output:
+
+```text
+[5 7 9]
+```
+
+---
+
+## Multiplication
+
+```python
+print(a*b)
+```
+
+Output:
+
+```text
+[4 10 18]
+```
+
+---
+
+## Scalar Multiplication
+
+```python
+print(a*10)
+```
+
+Output:
+
+```text
+[10 20 30]
+```
+
+---
+
+# 15. Creating Special Arrays
+
+## Zeros
+
+```python
+np.zeros(5)
+```
+
+Output:
+
+```text
+[0. 0. 0. 0. 0.]
+```
+
+---
+
+## Ones
+
+```python
+np.ones(5)
+```
+
+Output:
+
+```text
+[1. 1. 1. 1. 1.]
+```
+
+---
+
+## Range
+
+```python
+np.arange(1,11)
+```
+
+Output:
+
+```text
+[1 2 3 4 5 6 7 8 9 10]
+```
+
+---
+
+# 16. 2D Arrays
+
+```python
+import numpy as np
+
+arr = np.array([
+    [1,2,3],
+    [4,5,6]
+])
+
+print(arr)
+```
+
+Output:
+
+```text
+[[1 2 3]
+ [4 5 6]]
+```
+
+Access:
+
+```python
+print(arr[0][1])
+```
+
+Output:
+
+```text
+2
+```
+
+---
+
+# 17. Competitive Programming Note
+
+For CP contests:
+
+✅ Python Lists are used almost everywhere.
+
+✅ Learn:
+
+* Arrays
+* Prefix Sum
+* Sorting
+* Binary Search
+* Sliding Window
+* Two Pointers
+
+⚠ NumPy is generally not available on competitive programming judges and should not be relied upon during contests.
+
+Use NumPy mainly for:
+
+* Data Science
+* Machine Learning
+* Deep Learning
+* Numerical Computing
+
+---
+
+# Day 1 Key Takeaways
+
+1. Arrays are the foundation of competitive programming.
+2. Python lists act as dynamic arrays.
+3. Learn indexing, traversal, sorting, slicing, and prefix sums thoroughly.
+4. Time complexity understanding is crucial.
+5. NumPy provides faster numerical computation but is rarely used in CP contests.
+6. Master arrays before moving to searching, sorting, and advanced data structures.
+
+## Practice Tasks
+
+1. Find the largest element in an array.
+2. Find the second largest element.
+3. Reverse an array.
+4. Calculate prefix sums.
+5. Count frequencies of elements.
+6. Rotate an array by K positions.
+7. Sort an array in descending order.
+8. Find duplicates in an array.
+9. Compute cumulative sums.
+10. Solve 5 easy array problems on LeetCode or Codeforces.
