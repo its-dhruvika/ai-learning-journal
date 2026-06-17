@@ -294,16 +294,3 @@ Feature scaling is an important preprocessing step in Machine Learning because i
 * Vectorized computation
 
 ---
-
-## Files Created
-
-* day02_numpy_arrays.ipynb
-* day02_notes.md
-
-## Commit Message
-
-```bash
-git add .
-git commit -m "Day 02: Learned NumPy arrays, shapes, indexing and matrix operations"
-git push origin main
-```
