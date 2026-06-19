@@ -4,7 +4,6 @@
 
 Today I learned the fundamentals of Pandas, the primary library used for data manipulation and analysis in Python. I explored how to load, inspect, and analyze tabular data using DataFrames.
 
-### Series vs DataFrame
 
 * A **Series** is a one-dimensional labeled array.
 * A **DataFrame** is a two-dimensional table consisting of rows and columns.
